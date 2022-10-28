@@ -1,7 +1,4 @@
-<%= cl_image_tag("homepage_bckgrnd",
-      width: 700, height: 500, crop: :fill) %>
 <div class="container py-5">
-
   <div class="d-flex align-items-center justify-content-between mb-3">
   </div>
   <div class="row">
@@ -9,7 +6,8 @@
       <% @lists.each do |list| %>
           <div class="co-12 col-sm-6 col-md-4 mb-3">
             <%= link_to list_path(list) do %>
-              <div class="card">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+                rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path('homepage_bckgrnd.jpg') %>)">
                 <%= list.name %>
               </div>
             <% end %>
