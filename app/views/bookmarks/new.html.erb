@@ -7,6 +7,7 @@
           <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
           <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
           <%= f.submit class: "btn btn-outline-primary" %>
+          <%= link_to "Cancel", list_path(@list), class: "btn btn-outline-danger"%>
         <% end %>
       </div>
     </div>
