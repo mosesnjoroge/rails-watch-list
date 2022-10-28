@@ -5,8 +5,9 @@
         <div class="bg-white rounded p-3 shadow">
           <%= simple_form_for @list do |f| %>
             <%= f.input :name, placeholder: 'Drama' %>
+            <%= f.input :photo, as: :file %>
             <%= f.submit class: 'btn btn-outline-primary' %>
-            <%= link_to "Cancel", new_list_path(@list), class: 'btn btn-outline-danger' %>
+            <%= link_to "Cancel", lists_path, class: 'btn btn-outline-danger' %>
           <% end %>
         </div>
       </div>
