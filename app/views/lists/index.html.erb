@@ -6,13 +6,11 @@
 <div class="content">
   <div class="cards">
     <% @lists.each do |list| %>
-      <div class="card">
-        <div style="background-image: linear-gradient(rgba(0,0,0,0.3),
-          rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path('homepage_bckgrnd.jpg') %>)">
-            <%= link_to list_path(list) do %>
-                <%= list.name %>
-            <% end %>
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path('homepage_bckgrnd.jpg') %>)">
+          <%= link_to list_path(list) do %>
+              <%= list.name %>
+          <% end %>
       </div>
     <% end %>
   </div>
