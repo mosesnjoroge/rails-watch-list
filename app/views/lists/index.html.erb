@@ -1,20 +1,19 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path('homepage_bckgrnd.jpg') %>);">
-  <div class="container">
-    <h1 class = "text-center">Bookmark your favourite movies</h1>
-    <div class = 'button group'>
-      <%= link_to 'Bookmark', new_list_path, class: "btn btn-primary"%>
-    </div>
+  <h1 class = "text-center">Bookmark your favourite movies</h1>
+  <div class = 'button-group'>
+    <%= link_to 'Begin', new_list_path, class: "btn btn-primary"%>
   </div>
 </div>
 <div class="content">
-  <div class="cards">
-    <% @lists.each do |list| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
-        rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path('homepage_bckgrnd.jpg') %>)">
-          <%= link_to list_path(list) do %>
-              <%= list.name %>
-          <% end %>
-      </div>
-    <% end %>
-  </div>
+  <h2 class = 'text-center pt-1'>Current List</h2>
+    <div class="cards">
+      <% @lists.each do |list| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+          rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path('homepage_bckgrnd.jpg') %>)">
+            <%= link_to list_path(list) do %>
+                <%= list.name %>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
 </div>
