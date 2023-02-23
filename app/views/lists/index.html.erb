@@ -1,20 +1,19 @@
-<%= cl_image_tag("homepage_bckgrnd",
-      width: 700, height: 500, crop: :fill) %>
-<div class="container py-5">
-
-  <div class="d-flex align-items-center justify-content-between mb-3">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path('homepage_bckgrnd.jpg') %>);">
+  <h1 class = "text-center">Bookmark your favourite movies</h1>
+  <div class = 'button-group'>
+    <%= link_to 'Begin', new_list_path, class: "btn btn-primary"%>
   </div>
-  <div class="row">
-    <div class = "card-group">
+</div>
+<div class="content">
+  <h2 class = 'text-center pt-1'>Current List</h2>
+    <div class="cards">
       <% @lists.each do |list| %>
-          <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+          rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : cl_image_path('homepage_bckgrnd.jpg') %>)">
             <%= link_to list_path(list) do %>
-              <div class="card">
                 <%= list.name %>
-              </div>
             <% end %>
-          </div>
+        </div>
       <% end %>
     </div>
-  </div>
 </div>

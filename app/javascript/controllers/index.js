@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BannerOpacityController from "./banner_opacity_controller"
+application.register("banner-opacity", BannerOpacityController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

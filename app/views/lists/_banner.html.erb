@@ -1,0 +1,10 @@
+<%# partial for banner text and btn/s %>
+  <div class="container">
+    <h1 class = "text-center"><%= @list.name %>
+    </h1>
+  </div>
+  <div class = 'button-group'>
+    <%= link_to 'Add Movie', new_list_bookmark_path(@list), class: "btn btn-primary"%>
+    <%= link_to "delete list", list_path(@list), method: :delete, class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+    <%= link_to 'back', root_path, class: 'btn btn-outline-danger' %>
+  </div>
